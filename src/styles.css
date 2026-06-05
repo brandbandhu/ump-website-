@@ -1,0 +1,125 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-navy: var(--navy);
+  --color-royal: var(--royal);
+  --color-teal: var(--teal);
+  --color-soft: var(--soft);
+  --font-display: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.75rem;
+
+  /* Brand */
+  --navy: oklch(0.22 0.07 260);        /* #0B1F3A */
+  --royal: oklch(0.55 0.23 265);       /* #1E5BFF */
+  --teal: oklch(0.65 0.12 195);        /* #00A6A6 */
+  --soft: oklch(0.97 0.005 240);       /* #F5F7FA */
+
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.24 0.04 255);  /* #1E293B */
+  --card: oklch(1 0 0);
+  --card-foreground: var(--foreground);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--foreground);
+  --primary: var(--royal);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: var(--navy);
+  --secondary-foreground: oklch(1 0 0);
+  --muted: var(--soft);
+  --muted-foreground: oklch(0.45 0.03 255);
+  --accent: var(--teal);
+  --accent-foreground: oklch(1 0 0);
+  --destructive: oklch(0.58 0.24 27);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.91 0.01 255);
+  --input: oklch(0.91 0.01 255);
+  --ring: var(--royal);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, h5 { font-family: var(--font-display); letter-spacing: -0.02em; }
+}
+
+@utility container-x {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 1rem;
+  max-width: 1200px;
+}
+@media (min-width: 768px) { .container-x { padding-inline: 2rem; } }
+
+@utility gradient-hero {
+  background: linear-gradient(135deg, var(--navy) 0%, oklch(0.32 0.12 265) 60%, var(--royal) 100%);
+}
+@utility text-gradient {
+  background: linear-gradient(90deg, var(--royal), var(--teal));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+@utility card-soft {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 4px 16px -8px oklch(0.22 0.07 260 / 0.12);
+  transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+}
+@utility card-soft-hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -20px oklch(0.22 0.07 260 / 0.25);
+  border-color: oklch(0.55 0.23 265 / 0.4);
+}
+
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in { from { opacity: 0 } to { opacity: 1 } }
+@keyframes float-y {
+  0%, 100% { transform: translateY(0) }
+  50% { transform: translateY(-8px) }
+}
+
+.reveal { opacity: 0; }
+.reveal.in { animation: reveal-up .7s ease-out forwards; }
+.animate-float { animation: float-y 3s ease-in-out infinite; }
+.animate-fade-in { animation: fade-in .6s ease-out both; }

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="250" height="90" viewBox="0 0 250 90" role="img" aria-labelledby="title desc">
+  <title id="title">U. M. P. Towards Growth</title>
+  <desc id="desc">UMP Consultants logo with circular growth mark and tagline.</desc>
+  <rect width="250" height="90" fill="#ffffff"/>
+  <g transform="translate(8 8)">
+    <circle cx="36" cy="36" r="34" fill="#ffffff"/>
+    <path d="M36 0c11.2 0 21.2 5.1 27.8 13.1-6.6-2.3-13.8.3-17.5 6.4-4.4 7.4-1.8 17 5.7 21.2 5.8 3.3 12.7 2.4 17.5-1.7C68 56.5 53.4 72 36 72 18.3 72 3.6 59.2.7 42.4c4.9 4.1 12.1 4.9 18 1.5 7.5-4.4 9.9-14 5.4-21.4-3.7-6-10.7-8.4-17.2-6.1C13.3 6.6 24 0 36 0Z" fill="#2f86c6"/>
+    <path d="M36 18.3c7.2 0 13 5.8 13 13 0 5.2-3.1 9.8-7.6 11.8l11.4 15.5H19.2l11.4-15.5c-4.5-2-7.6-6.6-7.6-11.8 0-7.2 5.8-13 13-13Z" fill="#143a66"/>
+    <path d="M9.4 55.2c6.7 4.8 15.4 4.8 22.1 0l4.5 9.1c-10.9 3-22.4-.4-30-8.6l3.4-.5Z" fill="#143a66"/>
+    <path d="M40.5 55.2c6.7 4.8 15.4 4.8 22.1 0l3.4.5c-7.6 8.2-19.1 11.6-30 8.6l4.5-9.1Z" fill="#143a66"/>
+  </g>
+  <g fill="#143a66">
+    <text x="86" y="43" font-family="Georgia, 'Times New Roman', serif" font-size="31" font-weight="700" letter-spacing="3">U. M. P.</text>
+    <text x="92" y="65" font-family="Arial, Helvetica, sans-serif" font-size="17" font-style="italic">Towards Growth</text>
+  </g>
+</svg>
