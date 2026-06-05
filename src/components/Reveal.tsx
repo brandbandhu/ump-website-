@@ -1,7 +1,19 @@
 import { useEffect, useRef, type ReactNode } from "react";
 
-export function Reveal({ children, delay = 0, as: As = "div", className = "" }: { children: ReactNode; delay?: number; as?: any; className?: string }) {
-  const ref = useRef<HTMLDivElement>(null);
+type RevealElement = "div" | "section" | "article" | "aside";
+
+export function Reveal({
+  children,
+  delay = 0,
+  as: As = "div",
+  className = "",
+}: {
+  children: ReactNode;
+  delay?: number;
+  as?: RevealElement;
+  className?: string;
+}) {
+  const ref = useRef<HTMLElement>(null);
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
@@ -21,7 +33,7 @@ export function Reveal({ children, delay = 0, as: As = "div", className = "" }: 
     return () => io.disconnect();
   }, [delay]);
   return (
-    <As ref={ref as any} className={`reveal ${className}`}>
+    <As ref={ref} className={`reveal ${className}`}>
       {children}
     </As>
   );

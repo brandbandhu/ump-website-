@@ -1,8 +1,8 @@
-import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X, ChevronDown, Phone } from "lucide-react";
 import { COMPANY, INDUSTRIES, SERVICES } from "@/lib/site-data";
 import logo from "@/assets/logo.png";
+import { Link } from "@/lib/navigation";
 
 const navItems = [
   { to: "/", label: "Home" },
@@ -35,25 +35,43 @@ export function Header() {
         {/* Desktop nav */}
         <nav className="hidden lg:flex items-center gap-1">
           {navItems.map((i) => (
-            <NavLink key={i.to} to={i.to}>{i.label}</NavLink>
+            <NavLink key={i.to} to={i.to}>
+              {i.label}
+            </NavLink>
           ))}
-          <Dropdown label="Industries" items={INDUSTRIES.map((i) => ({ to: `/industries/${i.slug}`, label: i.name }))} />
-          <Dropdown label="Services" items={SERVICES.map((s) => ({ to: `/services/${s.slug}`, label: s.name }))} />
+          <Dropdown
+            label="Industries"
+            items={INDUSTRIES.map((i) => ({ to: `/industries/${i.slug}`, label: i.name }))}
+          />
+          <Dropdown
+            label="Services"
+            items={SERVICES.map((s) => ({ to: `/services/${s.slug}`, label: s.name }))}
+          />
           <NavLink to="/blog">Blog</NavLink>
           <NavLink to="/news">News</NavLink>
           <NavLink to="/contact">Contact Us</NavLink>
         </nav>
 
         <div className="hidden lg:flex items-center gap-3">
-          <a href={`tel:${COMPANY.phoneRaw}`} className="flex items-center gap-2 text-sm text-secondary hover:text-primary transition-colors">
+          <a
+            href={`tel:${COMPANY.phoneRaw}`}
+            className="flex items-center gap-2 text-sm text-secondary hover:text-primary transition-colors"
+          >
             <Phone size={16} /> {COMPANY.phone}
           </a>
-          <Link to="/contact" className="px-4 py-2 rounded-lg bg-primary text-white text-sm font-semibold hover:bg-secondary transition-colors">
+          <Link
+            to="/contact"
+            className="px-4 py-2 rounded-lg bg-primary text-white text-sm font-semibold hover:bg-secondary transition-colors"
+          >
             Get a Quote
           </Link>
         </div>
 
-        <button className="lg:hidden p-2 text-secondary" onClick={() => setOpen(!open)} aria-label="Menu">
+        <button
+          className="lg:hidden p-2 text-secondary"
+          onClick={() => setOpen(!open)}
+          aria-label="Menu"
+        >
           {open ? <X /> : <Menu />}
         </button>
       </div>
@@ -63,7 +81,9 @@ export function Header() {
         <div className="lg:hidden border-t bg-white">
           <div className="container-x py-4 flex flex-col gap-1 max-h-[80vh] overflow-y-auto">
             {navItems.map((i) => (
-              <MobileLink key={i.to} to={i.to} onClick={() => setOpen(false)}>{i.label}</MobileLink>
+              <MobileLink key={i.to} to={i.to} onClick={() => setOpen(false)}>
+                {i.label}
+              </MobileLink>
             ))}
             <MobileGroup
               label="Industries"
@@ -79,10 +99,19 @@ export function Header() {
               items={SERVICES.map((s) => ({ to: `/services/${s.slug}`, label: s.name }))}
               onItemClick={() => setOpen(false)}
             />
-            <MobileLink to="/blog" onClick={() => setOpen(false)}>Blog</MobileLink>
-            <MobileLink to="/news" onClick={() => setOpen(false)}>News</MobileLink>
-            <MobileLink to="/contact" onClick={() => setOpen(false)}>Contact Us</MobileLink>
-            <a href={`tel:${COMPANY.phoneRaw}`} className="mt-3 px-4 py-3 rounded-lg bg-secondary text-white text-center font-semibold">
+            <MobileLink to="/blog" onClick={() => setOpen(false)}>
+              Blog
+            </MobileLink>
+            <MobileLink to="/news" onClick={() => setOpen(false)}>
+              News
+            </MobileLink>
+            <MobileLink to="/contact" onClick={() => setOpen(false)}>
+              Contact Us
+            </MobileLink>
+            <a
+              href={`tel:${COMPANY.phoneRaw}`}
+              className="mt-3 px-4 py-3 rounded-lg bg-secondary text-white text-center font-semibold"
+            >
               Call {COMPANY.phone}
             </a>
           </div>
@@ -128,26 +157,57 @@ function Dropdown({ label, items }: { label: string; items: { to: string; label:
   );
 }
 
-function MobileLink({ to, children, onClick }: { to: string; children: React.ReactNode; onClick?: () => void }) {
+function MobileLink({
+  to,
+  children,
+  onClick,
+}: {
+  to: string;
+  children: React.ReactNode;
+  onClick?: () => void;
+}) {
   return (
-    <Link to={to} onClick={onClick} className="px-3 py-3 rounded-md text-secondary font-medium hover:bg-muted">
+    <Link
+      to={to}
+      onClick={onClick}
+      className="px-3 py-3 rounded-md text-secondary font-medium hover:bg-muted"
+    >
       {children}
     </Link>
   );
 }
 
 function MobileGroup({
-  label, isOpen, onToggle, items, onItemClick,
-}: { label: string; isOpen: boolean; onToggle: () => void; items: { to: string; label: string }[]; onItemClick: () => void }) {
+  label,
+  isOpen,
+  onToggle,
+  items,
+  onItemClick,
+}: {
+  label: string;
+  isOpen: boolean;
+  onToggle: () => void;
+  items: { to: string; label: string }[];
+  onItemClick: () => void;
+}) {
   return (
     <div>
-      <button onClick={onToggle} className="w-full flex items-center justify-between px-3 py-3 rounded-md text-secondary font-medium hover:bg-muted">
-        {label} <ChevronDown size={16} className={`transition-transform ${isOpen ? "rotate-180" : ""}`} />
+      <button
+        onClick={onToggle}
+        className="w-full flex items-center justify-between px-3 py-3 rounded-md text-secondary font-medium hover:bg-muted"
+      >
+        {label}{" "}
+        <ChevronDown size={16} className={`transition-transform ${isOpen ? "rotate-180" : ""}`} />
       </button>
       {isOpen && (
         <div className="pl-4 flex flex-col">
           {items.map((it) => (
-            <Link key={it.to} to={it.to} onClick={onItemClick} className="px-3 py-2 text-sm text-muted-foreground hover:text-primary">
+            <Link
+              key={it.to}
+              to={it.to}
+              onClick={onItemClick}
+              className="px-3 py-2 text-sm text-muted-foreground hover:text-primary"
+            >
               {it.label}
             </Link>
           ))}

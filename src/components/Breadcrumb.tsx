@@ -1,5 +1,5 @@
-import { Link } from "@tanstack/react-router";
 import { ChevronRight, Home } from "lucide-react";
+import { Link } from "@/lib/navigation";
 
 export function Breadcrumb({ items }: { items: { label: string; to?: string }[] }) {
   return (
@@ -14,7 +14,9 @@ export function Breadcrumb({ items }: { items: { label: string; to?: string }[] 
           <li key={idx} className="flex items-center gap-1">
             <ChevronRight size={14} className="text-white/50" />
             {it.to ? (
-              <Link to={it.to} className="hover:text-white">{it.label}</Link>
+              <Link to={it.to} className="hover:text-white">
+                {it.label}
+              </Link>
             ) : (
               <span className="text-white font-medium">{it.label}</span>
             )}

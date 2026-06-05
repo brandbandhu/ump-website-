@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link } from "@/lib/navigation";
 
 export function CtaBand() {
   return (
@@ -8,14 +8,21 @@ export function CtaBand() {
         <div>
           <h3 className="text-2xl md:text-4xl font-bold">Ready to grow with evidence?</h3>
           <p className="mt-3 text-white/85 max-w-xl">
-            Tell us about your goals. We will respond within one business day with a sharp, practical proposal.
+            Tell us about your goals. We will respond within one business day with a sharp,
+            practical proposal.
           </p>
         </div>
         <div className="flex flex-wrap gap-3 md:justify-end">
-          <Link to="/contact" className="px-6 py-3 rounded-lg bg-white text-secondary font-semibold hover:bg-accent hover:text-white transition-colors">
+          <Link
+            to="/contact"
+            className="px-6 py-3 rounded-lg bg-white text-secondary font-semibold hover:bg-accent hover:text-white transition-colors"
+          >
             Contact Us
           </Link>
-          <Link to="/about" className="px-6 py-3 rounded-lg border border-white/40 text-white font-semibold hover:bg-white/10 transition-colors">
+          <Link
+            to="/about"
+            className="px-6 py-3 rounded-lg border border-white/40 text-white font-semibold hover:bg-white/10 transition-colors"
+          >
             About UMP
           </Link>
         </div>

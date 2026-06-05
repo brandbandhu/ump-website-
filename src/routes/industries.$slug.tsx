@@ -1,35 +1,22 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowRight, CheckCircle2, Lightbulb, Search, Rocket, FileBarChart, ClipboardList } from "lucide-react";
+import {
+  ArrowRight,
+  CheckCircle2,
+  Lightbulb,
+  Search,
+  Rocket,
+  FileBarChart,
+  ClipboardList,
+} from "lucide-react";
 import { PageBanner, Section, SectionTitle } from "@/components/PageBanner";
 import { Reveal } from "@/components/Reveal";
 import { CtaBand } from "@/components/CtaBand";
 import { INDUSTRIES, SERVICES } from "@/lib/site-data";
+import { NotFoundPage } from "@/components/NotFoundPage";
+import { Link } from "@/lib/navigation";
 
-export const Route = createFileRoute("/industries/$slug")({
-  loader: ({ params }) => {
-    const industry = INDUSTRIES.find((i) => i.slug === params.slug);
-    if (!industry) throw notFound();
-    return { industry };
-  },
-  head: ({ loaderData }) => {
-    const i = loaderData?.industry;
-    if (!i) return {};
-    return {
-      meta: [
-        { title: `${i.name} — UMP Consultants` },
-        { name: "description", content: i.short },
-        { property: "og:title", content: `${i.name} — UMP Consultants` },
-        { property: "og:description", content: i.short },
-        { property: "og:image", content: i.hero },
-      ],
-      links: [{ rel: "canonical", href: `/industries/${i.slug}` }],
-    };
-  },
-  component: IndustryPage,
-});
-
-function IndustryPage() {
-  const { industry } = Route.useLoaderData();
+export function IndustryPage({ slug }: { slug: string }) {
+  const industry = INDUSTRIES.find((i) => i.slug === slug);
+  if (!industry) return <NotFoundPage />;
   const serviceMap = SERVICES.reduce<Record<string, (typeof SERVICES)[number]>>((acc, s) => {
     acc[s.name] = s;
     return acc;
@@ -99,7 +86,9 @@ function IndustryPage() {
                 ].map((p, idx) => (
                   <div key={p.t} className="card-soft p-4 text-center">
                     <p.i className="mx-auto text-primary" />
-                    <p className="text-xs text-accent font-semibold uppercase mt-2">Step {idx + 1}</p>
+                    <p className="text-xs text-accent font-semibold uppercase mt-2">
+                      Step {idx + 1}
+                    </p>
                     <p className="font-semibold text-secondary text-sm">{p.t}</p>
                   </div>
                 ))}
@@ -110,7 +99,9 @@ function IndustryPage() {
           <aside className="space-y-6">
             <Reveal>
               <div className="card-soft p-6 sticky top-24">
-                <p className="text-xs text-accent uppercase tracking-wider font-semibold">Services Used</p>
+                <p className="text-xs text-accent uppercase tracking-wider font-semibold">
+                  Services Used
+                </p>
                 <h4 className="mt-1 text-xl font-bold text-secondary">Solutions deployed</h4>
                 <ul className="mt-4 space-y-2">
                   {industry.services.map((sName: string) => {
@@ -118,7 +109,10 @@ function IndustryPage() {
                     if (!s) return null;
                     return (
                       <li key={s.slug}>
-                        <Link to={`/services/${s.slug}`} className="flex items-center justify-between gap-2 p-3 rounded-lg bg-muted hover:bg-primary hover:text-white transition-colors">
+                        <Link
+                          to={`/services/${s.slug}`}
+                          className="flex items-center justify-between gap-2 p-3 rounded-lg bg-muted hover:bg-primary hover:text-white transition-colors"
+                        >
                           <span className="font-medium text-sm">{s.name}</span>
                           <ArrowRight size={16} />
                         </Link>
@@ -126,7 +120,10 @@ function IndustryPage() {
                     );
                   })}
                 </ul>
-                <Link to="/contact" className="mt-6 block text-center px-4 py-3 rounded-lg bg-primary text-white font-semibold hover:bg-secondary transition-colors">
+                <Link
+                  to="/contact"
+                  className="mt-6 block text-center px-4 py-3 rounded-lg bg-primary text-white font-semibold hover:bg-secondary transition-colors"
+                >
                   Discuss your brief
                 </Link>
               </div>

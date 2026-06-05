@@ -93,7 +93,13 @@ export const INDUSTRIES: Industry[] = [
       "Voter awareness & outreach campaigns",
       "Event management & rally coordination",
     ],
-    services: ["Surveys", "Area Coverage", "Promotion", "Event Management", "Strategic Initiatives"],
+    services: [
+      "Surveys",
+      "Area Coverage",
+      "Promotion",
+      "Event Management",
+      "Strategic Initiatives",
+    ],
     benefits: [
       "Data-backed campaign strategy",
       "Targeted messaging by segment",
@@ -297,29 +303,35 @@ export const BLOGS: Article[] = [
   {
     slug: "primary-research-still-wins",
     title: "Why Primary Research Still Wins in the Age of AI",
-    excerpt: "Models are powerful — but they cannot replace boots-on-ground evidence. Here is why primary research is the backbone of smart decisions.",
+    excerpt:
+      "Models are powerful — but they cannot replace boots-on-ground evidence. Here is why primary research is the backbone of smart decisions.",
     body: "AI tools have made secondary research faster and cheaper than ever. Yet the most important questions — what your patients feel, what voters fear, what chemists actually stock — can only be answered by going to the source.\n\nAt UMP, we combine the speed of digital with the depth of fieldwork. Our enumerators are trained, our questionnaires are piloted, and our analysis is sharp. The result: insights you can defend in a board room and act on the next morning.\n\nPrimary research is not nostalgia. It is the only way to build a moat of proprietary evidence in a market where everyone has access to the same models.",
     date: "May 18, 2026",
     category: "Research",
-    image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80",
+    image:
+      "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80",
   },
   {
     slug: "healthcare-promotion-playbook",
     title: "A Modern Playbook for Healthcare Promotion",
-    excerpt: "How leading hospitals turn community trust into sustainable OPD growth — without sounding like an ad.",
+    excerpt:
+      "How leading hospitals turn community trust into sustainable OPD growth — without sounding like an ad.",
     body: "Healthcare promotion is uniquely sensitive. Patients do not respond to discounts the way retail shoppers do. They respond to credibility, accessibility and outcomes.\n\nThe modern playbook blends three things: hyperlocal awareness (camps, school programs, RWAs), credible content (doctor-led explainers), and experience (a smooth first visit). UMP helps hospitals orchestrate this across catchments with research-backed targeting.",
     date: "May 4, 2026",
     category: "Healthcare",
-    image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1200&q=80",
+    image:
+      "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1200&q=80",
   },
   {
     slug: "political-surveys-india",
     title: "What Good Political Surveys Look Like in India",
-    excerpt: "Sample design, multilingual fieldwork and the discipline to publish what the data says — not what the client wants.",
+    excerpt:
+      "Sample design, multilingual fieldwork and the discipline to publish what the data says — not what the client wants.",
     body: "A political survey is only as good as its sample. In India, that means thinking about caste, language, age, gender, urban-rural splits and turnout history — not just population.\n\nGood surveys publish their methodology. Great surveys correct for likely turnout and weight by the latest electoral rolls. UMP brings academic rigor to political research, in the field.",
     date: "April 21, 2026",
     category: "Politics",
-    image: "https://images.unsplash.com/photo-1541872703-74c5e44368f4?auto=format&fit=crop&w=1200&q=80",
+    image:
+      "https://images.unsplash.com/photo-1541872703-74c5e44368f4?auto=format&fit=crop&w=1200&q=80",
   },
   {
     slug: "real-estate-micro-markets",
@@ -328,7 +340,8 @@ export const BLOGS: Article[] = [
     body: "Pune, like every major Indian city, is a federation of micro-markets. The dynamics of Wagholi are not the dynamics of Baner. Choosing wrong costs years.\n\nWe walk every pocket, map competing inventory, talk to channel partners and triangulate with online demand. The result is a feasibility view you can actually price against.",
     date: "April 7, 2026",
     category: "Real Estate",
-    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80",
+    image:
+      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80",
   },
   {
     slug: "business-growth-evidence",
@@ -337,7 +350,8 @@ export const BLOGS: Article[] = [
     body: "Hustle without evidence is just expensive motion. The companies that compound are the ones that turn every campaign, every launch, every quarter into a learning loop.\n\nResearch is the engine of that loop. UMP makes it affordable and continuous.",
     date: "March 24, 2026",
     category: "Business",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+    image:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
   },
 ];
 
@@ -345,46 +359,56 @@ export const NEWS: Article[] = [
   {
     slug: "ump-launches-pune",
     title: "UMP Consultants Officially Launches Operations in Pune",
-    excerpt: "UMP opens its headquarters in Loni Kalbhor, Pune — anchored by a research and field operations team serving four core sectors.",
+    excerpt:
+      "UMP opens its headquarters in Loni Kalbhor, Pune — anchored by a research and field operations team serving four core sectors.",
     body: "UMP Consultants today announced the formal launch of its operations from 206, Madhyila Heritage, Loni Kalbhor, Pune. The firm brings together research, area coverage and marketing under one roof for clients in hospitals, construction, politics and pharma.",
     date: "May 30, 2026",
     category: "Company",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
+    image:
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
   },
   {
     slug: "pune-voter-pulse-2026",
     title: "UMP Releases Pune Voter Pulse Report 2026",
-    excerpt: "A constituency-level snapshot of issues, awareness and sentiment ahead of the upcoming civic cycle.",
+    excerpt:
+      "A constituency-level snapshot of issues, awareness and sentiment ahead of the upcoming civic cycle.",
     body: "The latest UMP Voter Pulse covers 14 assembly segments across Pune district, with a sample of 9,800 respondents. Top issues this cycle: traffic, water and housing affordability.",
     date: "May 12, 2026",
     category: "Research",
-    image: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=1200&q=80",
+    image:
+      "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=1200&q=80",
   },
   {
     slug: "pharma-coverage-expansion",
     title: "Pharma Coverage Network Expands to 6 States",
-    excerpt: "UMP's chemist and doctor coverage panels now span Maharashtra, Karnataka, Gujarat, MP, Telangana and Goa.",
+    excerpt:
+      "UMP's chemist and doctor coverage panels now span Maharashtra, Karnataka, Gujarat, MP, Telangana and Goa.",
     body: "With the addition of three new field offices, UMP's structured chemist beat coverage now reaches more than 22,000 outlets monthly across six states.",
     date: "April 28, 2026",
     category: "Pharma",
-    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1200&q=80",
+    image:
+      "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1200&q=80",
   },
   {
     slug: "hospital-camp-series",
     title: "Hospital Camp Series Reaches 50,000 Citizens",
-    excerpt: "A cross-city health camp series organized by UMP and partner hospitals crosses a major milestone.",
+    excerpt:
+      "A cross-city health camp series organized by UMP and partner hospitals crosses a major milestone.",
     body: "Over the past six months, UMP-led health camps have screened more than 50,000 citizens across Pune, Mumbai and Nashik for diabetes, hypertension and basic cardiac risk.",
     date: "April 10, 2026",
     category: "Events",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80",
+    image:
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80",
   },
   {
     slug: "construction-monthly-report",
     title: "Launching: Pune Real-Estate Monthly Report",
-    excerpt: "A new subscription report tracking launches, inventory, absorption and price movements across Pune micro-markets.",
+    excerpt:
+      "A new subscription report tracking launches, inventory, absorption and price movements across Pune micro-markets.",
     body: "UMP's new monthly publication gives developers, investors and channel partners a single source of truth on Pune's residential market — updated by the 5th of every month.",
     date: "March 30, 2026",
     category: "Real Estate",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
+    image:
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
   },
 ];
