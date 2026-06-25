@@ -10,7 +10,7 @@ export function AboutPage() {
     <>
       <PageBanner
         title="About UMP Consultants"
-        subtitle="Towards Growth — a research-driven consulting practice for politics, healthcare, real-estate and business."
+        subtitle="Towards Growth — a research-driven consulting practice focused on hospitality, construction, real estate and business growth."
         image="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80"
         crumbs={[{ label: "About Us" }]}
       />
@@ -20,16 +20,17 @@ export function AboutPage() {
           <Reveal>
             <SectionTitle eyebrow="Who we are" title="Niche studies. Practical impact." />
             <p className="mt-5 text-muted-foreground leading-relaxed">
-              {COMPANY.name} is a start-up sworn to deliver niche studies in the fields of politics
-              and market research. We assist political parties, government agencies, media,
-              businesses and organizations by providing analysis grounded in evidence, accurate
-              primary information, statistics, public opinion, recent developments, market data,
-              surveys and reliable sources.
+              {COMPANY.name} is a start-up sworn to deliver niche studies in market research,
+              field intelligence and growth consulting, with a strong focus on hospitality and
+              construction. We assist hotels, restaurants, real-estate developers, builders,
+              contractors, construction suppliers and growth-focused businesses with analysis
+              grounded in evidence, accurate primary information, statistics, customer feedback,
+              recent developments, market data, surveys and reliable sources.
             </p>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              UMP also partners for marketing assignments, promotions, campaign planning, area
-              coverage, event management and strategic initiatives tailored to specific locations,
-              industries, constituencies and audiences.
+              UMP also partners for hospitality promotions, construction project marketing, area
+              coverage, event management, lead-generation campaigns and strategic initiatives
+              tailored to specific markets, locations, industries and audiences.
             </p>
           </Reveal>
           <Reveal delay={120}>
@@ -49,12 +50,12 @@ export function AboutPage() {
             {
               icon: Target,
               t: "Mission",
-              d: "Equip leaders with primary evidence and on-ground execution that turns ambition into measurable growth.",
+              d: "Equip hospitality and construction leaders with primary evidence and on-ground execution that turns ambition into measurable growth.",
             },
             {
               icon: Eye,
               t: "Vision",
-              d: "To be India's most trusted partner for niche political and market research and integrated campaign delivery.",
+              d: "To be India's most trusted partner for hospitality and construction market research, field intelligence and integrated growth execution.",
             },
             {
               icon: Heart,
@@ -121,7 +122,8 @@ export function AboutPage() {
             Growth is not a slogan. It is a discipline.
           </h2>
           <p className="mt-5 text-white/80 text-lg">
-            We exist to help institutions grow — voters, patients, customers, citizens — by
+            We exist to help hospitality and construction businesses grow — customers, buyers,
+            communities and teams — by
             understanding them deeply and reaching them faithfully.
           </p>
         </div>
